@@ -1,0 +1,21 @@
+{
+  "name": "arm-daemon",
+  "image": "automaticrippingmachine/automatic-ripping-machine:latest",
+  "runArgs": [
+    "--name=arm-daemon",
+    "--privileged",
+    "--device=/dev/sr0:/dev/sr0",
+  ],
+  "containerEnv": {
+    "ARM_UID": "1000",
+    "ARM_GID": "1000",
+    "TZ": "UTC"
+  },
+  "mounts": [
+    "source=/home/simon/arm/config,target=/etc/arm/config,type=bind",
+    "source=/home/simon/arm/media,target=/home/arm/media,type=bind",
+    "source=/home/simon/arm/logs,target=/home/arm/logs,type=bind"
+  ],
+  "forwardPorts": [8080],
+  "remoteUser": "arm"
+}
