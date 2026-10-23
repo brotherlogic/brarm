@@ -3,7 +3,8 @@
   "image": "automaticrippingmachine/automatic-ripping-machine:latest",
   "runArgs": [
     "--name=arm-daemon",
-    "--privileged",
+      "--privileged",
+      "-p", "8080:8080",
     "--device=/dev/sr0:/dev/sr0",
   ],
   "containerEnv": {
