@@ -26,7 +26,7 @@
   "postCreateCommand": "bash -c 'mkdir -p /home/arm/media/{completed,raw,transcode} /home/arm/logs && [ -f /etc/arm/config/arm.yaml ] || cp -n /opt/arm/setup/* /etc/arm/config/ 2>/dev/null || true && [ -f /etc/arm/config/abcde.conf ] || touch /etc/arm/config/abcde.conf && [ -f /etc/arm/config/apprise.yaml ] || touch /etc/arm/config/apprise.yaml'",
 
   // 3. Ensure the web server starts automatically on every up/resume
-  "postStartCommand": "bash -c 'pgrep -f runui.py > /dev/null || nohup python3 /opt/arm/arm/runui.py > /home/arm/logs/armui.log 2>&1 &'",
-    
+  "postStartCommand": "bash -c 'pgrep -f runui.py > /dev/null || nohup python3 /opt/arm/arm/runui.py > /home/arm/logs/armui.log 2>&1 &'",    
+
   "remoteUser": "arm"
 }
